@@ -1,9 +1,9 @@
 # discord-bot
-A custom discord bot for my personal server.
+A custom discord bot named **Tater Bot** for my personal server.
 
 ## Function
 
-#### Prefix: '#'
+#### Prefix: `#`
 ### Current commands:
 * `#hello`- returns a simple greeting chosen at random from a greetings list
 * `#echo` - returns back what was said
