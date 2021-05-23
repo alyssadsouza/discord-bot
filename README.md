@@ -5,7 +5,7 @@ A custom discord bot named **Tater Bot** for my personal server.
 
 #### Prefix: `#`
 ### Current commands:
-* `#hello`- returns a simple greeting chosen at random from a greetings list
+* `#hello` - returns a simple greeting chosen at random from a greetings list
 * `#echo` - returns back what was said
 * `#hi taterbot` - returns a greeting and mentions user
 >If other users are mentioned in the input, they are mentioned in the greeting as well.
