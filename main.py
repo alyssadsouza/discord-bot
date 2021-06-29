@@ -13,6 +13,8 @@ token = os.environ['TOKEN']
 
 greetings = ['Hello!', "Hi!", "Hey!", "Oh, I didn't see you there!", "Hello there!"]
 
+facts = open("facts.txt", "r").readlines()
+
 bot = discord.Client()
 
 @bot.event
@@ -33,7 +35,7 @@ async def on_message(message):
     await message.channel.send(message.content[5:].strip())
   
   # greeting with mention
-  if message.content.startswith("#hi taterbot"):
+  if "#hi taterbot" in message.content:
     await message.channel.send(random.choice(greetings)[:-1] + ", <@" + str(message.author.id) + ">!")
 
     # mention you and everyone else you tag
@@ -60,6 +62,9 @@ async def on_message(message):
         result = ops[operator_char](float(calculate[:calculate.index(char)]),float(calculate[calculate.index(char)+1:]))
         break
     await message.channel.send(result)
+
+  if "#fact" in message.content or "#are you smart" in message.content:
+    await message.channel.send(random.choice(facts))
 
 
 bot.run(token)
