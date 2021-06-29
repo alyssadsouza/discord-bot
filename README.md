@@ -10,3 +10,4 @@ A custom discord bot named **Tater Bot** for my personal server.
 * `#hi taterbot` - returns a greeting and mentions user
 >If other users are mentioned in the input, they are mentioned in the greeting as well.
 * `#math` - followed by a one-step calculation (addition `+` , subtraction `-` , multiplication `*` , division `/` , exponentiation `^` ) - returns the result as a float
+* `#fact` or `#are you smart` - returns a fact chosen at random from `facts.txt`
