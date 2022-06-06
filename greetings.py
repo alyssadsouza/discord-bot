@@ -1,0 +1,1 @@
+greetings = ['Hello!', "Hi!", "Hey!", "Oh, I didn't see you there!", "Hello there!"]
