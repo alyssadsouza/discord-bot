@@ -6,7 +6,7 @@ from discord.ext import tasks
 
 from datetime import datetime, timedelta
 from pytz import timezone
-from birthdays import dateToPerson, birthdayMsgs, ages
+from birthdays import dateToPerson, birthdayMsgs
 from greetings import greetings
 
 from stay_awake import stay_awake
@@ -48,7 +48,8 @@ def getBirthdayBoi():
   for date, person in dateToPerson.items():
     if now.month == date.month and now.day == date.day:
       print(f"Happy birthday {person}")
-      return person
+      age = now.year() - date.year()
+      return [person, age]
     
   return ""
 
@@ -63,8 +64,7 @@ async def called_once_a_day_at_midnight():
     birthdayBoi = getBirthdayBoi()
   
     if birthdayBoi != "":
-      ages[birthdayBoi] = ages[birthdayBoi] + 1 # age them up
-      await message_channel.send("@everyone " + birthdayMsgs[birthdayBoi] + " " + birthdayBoi + " just turned " + str(ages[birthdayBoi]) + ", give them a pat 🥳")
+      await message_channel.send("@everyone " + birthdayMsgs[birthdayBoi[0]] + " " + birthdayBoi + " just turned " + str(birthdayBoi[1]) + ", give them a pat 🥳")
       # await message_channel.send(asciiArt[birthdayBoi])
 
 @called_once_a_day_at_midnight.before_loop
